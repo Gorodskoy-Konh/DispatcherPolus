@@ -1,0 +1,1 @@
+const kTableRowPadding = 20.0;

@@ -1,14 +1,27 @@
 import 'package:dispatcher_polus/constants/strings.dart';
-import 'package:dispatcher_polus/models/order_status.dart';
 import 'package:flutter/material.dart';
 
-import '../models/order.dart';
+import '../constants/colors.dart';
 import '../models/transport.dart';
 
 class TransportTableRow {
   static TableRow buildTableRow(int id, List<Transport> transports, VoidCallback callback) {
     return TableRow(
-      decoration: BoxDecoration(),
+      decoration: id == -1
+          ? const BoxDecoration(
+        color: kYellow,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+        shape: BoxShape.rectangle,
+      )
+          : BoxDecoration(
+        color: id % 2 == 1 ? Colors.grey[300] : null,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+        shape: BoxShape.rectangle,
+      ),
       children: [
         // Park
         Padding(

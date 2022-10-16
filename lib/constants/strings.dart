@@ -9,6 +9,7 @@ const kNoData = 'Нет данных!';
 const kDriverIsDefined = 'Водитель определен';
 const kDriverIsNotDefined = 'Водитель не определен';
 const kProcessing = 'Обработка заявки';
+const kAll = 'Все';
 
 const kBegin = 'Начало';
 const kEnd = 'Конец';
@@ -23,3 +24,7 @@ const kTransportType ='Описание/характеристики';
 const kTransportName ='Наименование ТС';
 const kTransportNumber ='Номер ТС';
 const kTransportDriver ='Водитель';
+
+// Filter options
+const kBeginTimeDescending = 'Начало работ (сначала ближайшие)';
+const kBeginTimeAscending = 'Начало работ (ближайшие в конце)';

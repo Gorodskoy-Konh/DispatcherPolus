@@ -14,19 +14,19 @@ class NavigationController {
 
   GlobalKey<NavigatorState> get key => _key;
 
-  MaterialPageRoute<Object> onGenerateRoute(RouteSettings settings) {
+  PageRouteBuilder<Object> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case Routes.orders:
-        return MaterialPageRoute(
-          builder: (_) => const Orders(),
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const Orders(),
         );
       case Routes.transports:
-        return MaterialPageRoute(
-          builder: (_) => const Transports(),
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const Transports(),
         );
       default:
-        return MaterialPageRoute(
-          builder: (_) => const Orders(),
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const Orders(),
         );
     }
   }
@@ -35,7 +35,7 @@ class NavigationController {
       _key.currentState?.pushNamed(page, arguments: arguments);
 
   Future<Object?>? pushToOrdersPage() =>
-      _key.currentState?.pushNamed(Routes.orders);
+      _key.currentState?.pushReplacementNamed(Routes.orders);
 
   Future<Object?>? pushToTransportsPage() =>
       _key.currentState?.pushNamed(Routes.transports);
